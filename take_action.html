@@ -1,0 +1,128 @@
+---
+layout: default
+title: Take Action
+permalink: /take-action/
+---
+{% capture content %}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center">Take Action</h1>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-xs-12">
+      <p class="lead">
+        Be part of the movement to restore our democracy. Mayday is built on the idea that harnessing the full strenght of our community will make reform possible.
+      </p>
+      <p class="lead">
+        Systemic corruption has broken our government and is preventing progress on every issue that matters. The only reason it doesn't change is because we believe it can't.
+      </p>
+    </div>
+  </div> -->
+  <ul class="action-tree col-md-10 center-block list-unstyled">
+    <li class="incomplete active js-sign-up">
+      <small class="text-hide show-complete">Completed:</small>
+      <small class="text-hide show-incomplete icon-sign-up">Incomplete</small>
+      <a href="#" class="btn btn-md-wide" title="Sign Up for Updates">
+        <strong class="show-complete">Completed:</strong>
+        <strong class="show-incomplete">1.</strong>
+        Sign Up for Updates
+      </a>
+      {% include panels/panel_action_w_signup.html hide_volunteer=true %}
+    </li>
+    <li class="incomplete js-get-educated">
+      <small class="text-hide show-complete">Completed:</small>
+      <small class="text-hide show-incomplete icon-get-educated">Incomplete</small>
+      <a href="#" class="btn btn-md-wide" title="Get Educated">
+        <strong class="show-complete">Completed:</strong>
+        <strong class="show-incomplete">2.</strong>
+        Get Educated
+      </a>
+      {% include panels/panel_action_w_get_educated.html %}
+    </li>
+    <li class="incomplete js-spread-the-word">
+      <small class="text-hide show-complete">Completed:</small>
+      <small class="text-hide show-incomplete icon-spread-the-word">Incomplete</small>
+      <a href="#" class="btn btn-md-wide" title="Spread the Word">
+        <strong class="show-complete">Completed:</strong>
+        <strong class="show-incomplete">3.</strong>
+        Spread the Word
+      </a>
+      {% include panels/panel_action_w_spread_the_word.html %}
+    </li>
+    <li class="incomplete js-call-congress">
+      <small class="text-hide show-complete">Completed:</small>
+      <small class="text-hide show-incomplete icon-call-congress">Incomplete</small>
+      <a href="#" class="btn btn-md-wide" title="Take Action: Call Congress">
+        <strong class="show-complete">Completed:</strong>
+        <strong class="show-incomplete">4.</strong>
+        Call Congress
+      </a>
+      {% include panels/panel_action_w_call_congress.html %}
+    </li>
+    <li class="incomplete js-join-the-discussion">
+      <small class="text-hide show-complete">Completed:</small>
+      <small class="text-hide show-incomplete icon-join-discussion">Incomplete</small>
+      <a href="#" class="btn btn-md-wide" title="Join the Discussion">
+        <strong class="show-complete">Completed:</strong>
+        <strong class="show-incomplete">5.</strong>
+        Join the Discussion
+      </a>
+      {% include panels/panel_action_w_join_discussion.html %}
+    </li>
+    <li class="incomplete js-volunteer">
+      <small class="text-hide show-complete">Completed:</small>
+      <small class="text-hide show-incomplete icon-volunteer">Incomplete</small>
+      <a href="#" class="btn btn-md-wide" title="Volunteer">
+        <strong class="show-complete">Completed:</strong>
+        <strong class="show-incomplete">6.</strong>
+        Volunteer
+      </a>
+      {% include panels/panel_action_w_volunteer.html %}
+    </li>
+  </ul>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
+
+<script>
+  function makeActive($target_li){
+    $target_li.addClass('active').siblings().removeClass('active');
+  }
+  function setAsComplete($target_li){
+    $target_li.removeClass('incomplete');
+    $target_li.addClass('complete').addClass('thanked');
+  }
+
+  function loadTargetedAction(){
+    if(location.hash.length > 1){
+      hash_location = location.hash.replace(/^#/,'');
+      $targetAction = $('.js-'+hash_location);
+      makeActive($targetAction);
+      $("html, body").animate({ scrollTop: $targetAction.offset().top }, 100);
+    }
+  }
+  $(document).ready(function(){
+    loadTargetedAction();
+
+    $('.action-tree>li>.btn').on('click', function(e){
+      e.preventDefault();
+      $target = $(this).parents('li')
+      makeActive($target);
+      new_hash = $target.prop('class').replace(/^.+js-([\w-]+) .+/,"$1")
+      location.hash = new_hash
+    });
+    $('.skip-next a.next').on('click', function(e){
+      e.preventDefault();
+      makeActive($(this).parents('li').next());
+    });
+    $('.skip-next a.done').on('click', function(e){
+      e.preventDefault();
+      setAsComplete($(this).parents('li'));
+      makeActive($(this).parents('li').next());
+      // makeActive($(this).parents('li').nextAll('li.incomplete'));
+    });
+  });
+</script>

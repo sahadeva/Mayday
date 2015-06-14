@@ -1,0 +1,44 @@
+/**
+ * Mayday Content
+ */
+.team_and_board_fonts {
+  padding-bottom:40px;
+
+  h2{
+    font-weight: 400;
+    margin-bottom:20px;
+  }
+  h3{
+    color: #333;
+    font-weight:400;
+    margin:0 0 3px;
+  }
+  h4{
+    margin:0;
+    font-weight:400;
+    font-size:22px;
+  }
+
+  p{
+    font-size:16px;
+    line-height:normal;
+    @include phone{
+      font-size:17px;
+      line-height:140%;
+    }
+  }
+}
+.tb-profile{
+  margin-bottom: 30px;
+  @include phone{
+    margin-top: 35px;
+  }
+}
+.img-bottom{
+  margin-bottom: 15px;
+}
+.contributors-format h5{
+  font-size: 18px;
+  line-height:1em;
+}
+

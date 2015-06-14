@@ -1,0 +1,39 @@
+---
+layout: default
+title: MAYDAY.US - In The News
+permalink: /in-the-news/
+---
+{% capture content %}
+
+<div class="container news-content">
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-xs-11 col-sm-8">
+      <div class="row no-gutter-phone">
+        <h1 class="mayday-headline-smaller"><i class="md-icon md-newspaper-large"></i>Mayday<span class="mayday-headline-smaller-thinner"> In the News</span></h1>
+      </div>
+      <div class="row">
+        <div clas="cols-xs-12">
+          <ul class="list-inline">
+          {% for article in site.data.press_articles %}
+            <li id="{{article.link | slugify}}">
+              <h3><a href="{{article.link}}">{{ article.title }}</a></h3>
+              {% for quote in article.quotes %}
+              <blockquote cite="{{article.link}}">
+                {{ quote | markdownify }}
+              </blockquote>
+              {% endfor %}
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% include sidebar_news.html %}
+  </div>
+</div>
+</div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}
+

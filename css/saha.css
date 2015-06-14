@@ -1,0 +1,33 @@
+.reform .caption {
+  padding-top: 0;
+}
+
+.reform a {
+  display: block;
+  padding: 27px 0;
+}
+
+.reform h2 {
+  margin: 0;
+}
+
+.reform .media {
+  margin: 9px 0 7px;
+}
+  
+  .reform .media-left {
+    width: 20%;
+  }
+  
+  .reform .media-body {
+    width: 80%;
+  }
+  
+    .reform .media-body span.label {
+      border-radius: 15px;
+      padding: 1px .5em 1px;
+    }
+
+.reform .progress {
+  margin-bottom: 0;
+}

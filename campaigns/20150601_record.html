@@ -1,0 +1,62 @@
+---
+layout: default
+title: MAYDAY.US - Record a message
+permalink: /record/
+meta_content: |
+  <meta property="og:url" content="https://mayday.us/record/"/>
+  <meta property="og:image" content="https://mayday.us/images/campaigns/20150601_recording_campaign.jpg"/>
+  <meta property="og:title" content="You record your message. We deliver it to Congress."/>
+  <meta property="og:description" content="I just did this, and I hope you'll do it too. Record a simple message, and Mayday PAC will deliver it to key Members of Congress. Tell them you want them to reform the way campaigns are funded. It's easy, and it makes a difference. "/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="{{ root_path }}/images/M_shield_callout_box.svg" name="twitter:image:src"/>
+  <meta content='@mayday' name="twitter:site"/>
+  <title>You record your message. We deliver it to Congress. - MAYDAY</title>
+---
+
+{% capture custom_css %}
+<style type="text/css">
+  .simple-list strong{
+    color: #000;
+  }
+  .record .panel {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  h2 {
+    font-weight: 400;
+  }
+  .tooltip-prompt {
+    text-decoration: none;
+    cursor: default;
+  }
+
+</style>
+{% endcapture %}
+{% capture content %}
+<div class="container smaller-layout record">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Citizen Recording Studio</h1>
+
+      <p>Record a message that we'll deliver to key Congress members' offices. Here are a few helpful tips, but remember: If you're unhappy with your first try, you can always re-record your message until you are happy.</p>
+
+      <ol class="simple-list small-list">
+        <li>
+          Say your name, phone number, and that you're a voter. <br />
+          <small>Remember: Be confident, speak slowly, and don't forget to breathe.</small>
+        </li>
+        <li>Explain that you're asking the senator to <strong>support S. 1538</strong>, The Fair Elections Now Act.</li>
+        <li>Thank the Senator for listening to citizens instead of special interests.</li>
+        <li>When you finish your message, stay on the line to review or re-record your message.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 action-wrap center-block incomplete">
+      {% include panels/panel_action_w_record_message.html hide_next=true intro_content="We'll deliver it to Congress" %}
+    </div>
+  </div>
+{% endcapture %}
+
+{% include sub_layouts/default_layout.html %}

@@ -1,0 +1,103 @@
+s3_id: <%= ENV['S3_ID'] %>
+s3_secret: <%= ENV['S3_SECRET'] %>
+s3_bucket: <%= ENV['S3_BUCKET'] %>
+
+error_document: 404/index.html
+
+redirects:
+  # Main page redirects
+  # the-plan: 'about-us'
+  about: 'about-us'
+  about_us: 'about-us'
+  media: 'in-the-news'
+  unsubscribe: 'http://act.mayday.us/unsubscribe'
+  blog: 'http://blog.mayday.us/'
+  wmail: http://s187953.gridserver.com/.tools/webmail/
+  feed.xml: 'http://blog.mayday.us/rss'
+  labs: https://mayday.us/take-action/
+
+  # Pledge pages
+  newpledge: 'donate'
+  pledge: 'donate'
+  pledge-independence: 'donate'
+  newpledge2: 'donate'
+  pledge-the-internets-superpac: 'donate'
+  vidpledge: 'donate'
+  newpledge-with-thanks: 'donate'
+
+  # Embed page and associated images
+  embed: 'https://v1.mayday.us/embed/'
+  embed.html: 'https://pledge.mayday.us/embed.html'
+  images/ProfilePic.jpg: 'https://v1.mayday.us/images/ProfilePic.jpg'
+  images/Banner.jpg: 'https://v1.mayday.us/images/Banner.jpg'
+  images/superpacforinternet.jpg: 'https://v1.mayday.us/images/superpacforinternet.jpg'
+  images/appleerror.jpg: 'https://v1.mayday.us/images/appleerror.jpg'
+  images/criticalerror.jpg: 'https://v1.mayday.us/images/criticalerror.jpg'
+  images/winerror.jpg: 'https://v1.mayday.us/images/winerror.jpg'
+  images/mayday-genericshare.jpg: 'https://v1.mayday.us/images/mayday-genericshare.jpg'
+  images/mayday-goodfight-share.jpg: 'https://v1.mayday.us/images/mayday-goodfight-share.jpg'
+  images/superpacforinternet.jpg: 'https://v1.mayday.us/images/superpacforinternet.jpg'
+  images/corner-embed.png: 'https://v1.mayday.us/images/corner-embed.png'
+  images/halfpage.png: 'https://v1.mayday.us/images/halfpage.png'
+  images/inline-rectangle.png: 'https://v1.mayday.us/images/inline-rectangle.png'
+  images/small-square.png: 'https://v1.mayday.us/images/small-square.png'
+  images/small-rectangle.png: 'https://v1.mayday.us/images/small-rectangle.png'
+  images/skyscraper-wide.png: 'https://v1.mayday.us/images/skyscraper-wide.png'
+  images/skyscraper.png: 'https://v1.mayday.us/images/skyscraper.png'
+  images/mobile-leaderboard.png: 'https://v1.mayday.us/images/mobile-leaderboard.png'
+  images/large-leaderboard.png: 'https://v1.mayday.us/images/large-leaderboard.png'
+  images/leaderboard.png: 'https://v1.mayday.us/images/leaderboard.png'
+  images/banner.png: 'https://v1.mayday.us/images/banner.png'
+
+# Below are examples of all the available configurations.
+# See README for more detailed info on each of them.
+
+# site: path-to-your-website
+
+# max_age:
+#   "assets/*": 6000
+#   "*": 300
+
+# gzip:
+#   - .html
+#   - .css
+#   - .md
+# gzip_zopfli: true
+
+# See http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region for valid endpoints
+# s3_endpoint: ap-northeast-1
+
+# ignore_on_server: that_folder_of_stuff_i_dont_keep_locally
+
+# exclude_from_upload:
+#   - those_folders_of_stuff
+#   - i_wouldnt_want_to_upload
+
+# s3_reduced_redundancy: true
+
+# cloudfront_distribution_id: your-dist-id
+
+# cloudfront_distribution_config:
+#   default_cache_behavior:
+#     min_TTL: <%= 60 * 60 * 24 %>
+#   aliases:
+#     quantity: 1
+#     items:
+#       CNAME: your.website.com
+
+# cloudfront_invalidate_root: true
+
+# concurrency_level: 5
+
+# redirects:
+#   index.php: /
+#   about.php: about.html
+#   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+# routing_rules:
+#   - condition:
+#       key_prefix_equals: blog/some_path
+#     redirect:
+#       host_name: blog.example.com
+#       replace_key_prefix_with: some_new_path/
+#       http_redirect_code: 301

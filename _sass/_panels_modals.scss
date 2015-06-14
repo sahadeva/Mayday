@@ -1,0 +1,350 @@
+/**
+ * Mayday Panel Styles
+ */
+
+.action-panel{
+  text-align:center;
+  border-radius:5px;
+  border: 1px solid $color-navy-blue;
+  padding:0;
+  background:#fff;
+  margin-bottom: 0;
+  // overflow:hidden;
+
+  .center-block{
+    float:none;
+  }
+
+  .panel-heading{
+    padding-top:0;
+    padding-bottom:0;
+    background-color: $color-navy-blue-light;
+    border-bottom: 10px solid  $color-navy-blue;
+  }
+
+  .panel-body{
+    padding-top: 0;
+
+    a.btn-md-red{
+      margin-bottom:15px;
+    }
+  }
+
+  &.with-shield{
+    position:relative;
+
+    .panel-icon{
+      padding:0;
+      background: $color-navy-blue;
+      border-bottom:5px solid $color-navy-blue-light;
+      text-align:center;
+      height:20px;
+
+      .img-responsive{
+        position:absolute;
+        top:-12px;
+        height:45px;
+        left:50%;
+        margin-left:-20px;
+        z-index:100;
+        @include phone{
+          // top:22px;
+        }
+        @include tablet{
+          // top:22px;
+        }
+      }
+      .fade-line{
+        position: absolute;
+        top: 8px;
+        width: 100px;
+        left: 50%;
+        margin-left: -50px;
+        display: block;
+        border: none;
+        color: white;
+        height: 1px;
+        color: white;
+        height: 2px;
+        background: black;
+        background: -webkit-radial-gradient(circle, rgba(255,255,255, 0.5), $color-navy-blue);
+        background: radial-gradient(circle, rgba(255,255,255, 0.5), $color-navy-blue);
+      }
+    }
+    h2{
+      color: $color-navy-blue;
+      font-weight:400;
+      font-size:26px;
+      background-color:transparent;
+      padding-bottom: 0;
+
+    }
+  }
+
+  .img-capitol{
+    width:70%;
+    margin:0 auto;
+  }
+
+  p{
+    font-size: 18px;
+    font-weight:400;
+    line-height: 140%;
+
+    @include phone{
+      padding-bottom: 0;
+    }
+
+    &.small{
+      font-size: 16px;
+      margin-bottom:0;
+      margin-top:0;
+    }
+
+    &.help-block{
+      margin:0;
+      font-size:12px;
+      text-align: left;
+      margin-left:2px;
+    }
+  }
+
+  h2 {
+    margin-top:0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size:36px;
+    font-weight:400;
+    color: #ffffff;
+
+    &.small{
+      font-size: 26px;
+      color:#fff;
+    }
+  }
+}
+
+.action-panel form{
+  margin: 25px 15px 0 15px;
+}
+.action-panel form, form.md-inputs {
+  padding-bottom: 15px;
+
+  input[type=text], input[type=email], input[type=tel], input[type=number], textarea {
+    font-size: 22px;
+    width: 100%;
+    border: 2px solid $color-navy-blue;
+    padding: 8px 0 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+
+    &.error{
+      border-color:$color-dark-red;
+    }
+  }
+  &.smaller-form{
+    padding-bottom: 0;
+    .form-group{
+      input[type=text], input[type=email], input[type=tel], input[type=number], textarea {
+        margin-bottom: 4px;
+        font-size: 18px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+form.md-inputs{
+  input[type=text], input[type=email], input[type=tel], input[type=number], textarea {
+    padding:5px 10px;
+    height:auto;
+  }
+  p.help-block{
+    margin:0;
+    font-size:12px;
+    text-align: left;
+    margin-left:2px;
+    line-height: normal;
+  }
+}
+.banner-image .action-panel{
+  .form-group{
+    margin-bottom:10px;
+    input[type=text], input[type=email], input[type=tel], input[type=number] {
+      margin-bottom: 0;
+      font-size: 18px;
+      font-weight: 300;
+    }
+    .btn-md-wide{
+      margin-bottom: 0;
+    }
+  }
+}
+.panel-mayday-counters {
+  margin: 0px 20px 0;
+  position: relative;
+  background-color: #F9F9F9;//rgb(228,229,233);
+  border-radius: 4px;
+  text-align: center;
+  color: $color-navy-blue-light;
+  font-weight: 400;
+  padding-top: 5px;
+  padding-bottom: 30px;
+  @include phone{
+    margin: 0;
+  }
+  @include tablet-minus{
+    background: none;
+  }
+
+  .headline {
+    font-size: 30px;
+  }
+  .icon-line {
+    margin-top: 10px;
+    height: 20px;
+    text-align: center;
+    position: relative;
+    .half-hr {
+      display: inline-block;
+      width: 60px;
+      background-color: rgb(193,197,200);
+      height: 1px;
+      margin-bottom: 8px;
+    }
+    i {
+      font-size: 20px;
+      padding: 0 10px;
+    }
+  }
+  .counter-label {
+    font-size: 24px;
+  }
+  .counter-row {
+    margin-top: 6px;
+    height: 84px;
+    .tile {
+      margin: 0 1.5px;
+      padding-top: 28px;
+      border-radius: 8px;
+      color: #fff;
+      display: inline-block;
+      height: 100%;
+      width: 56px;
+      background-color: $color-navy-blue-light;
+      font-size: 76px;
+      position: relative;
+      .hr {
+        width: 100%;
+        position: absolute;
+        top: 42px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: rgb(0,0,0);
+      }
+    }
+  }
+}
+
+#submit-candidate-modal {
+  .modal-dialog {
+    height: 100%;
+    max-width:440px;
+  }
+  .modal-thankyou{
+    max-width:340px;
+  }
+  .modal-content {
+    background-color: #e4e4e4;
+    border: none;
+  }
+
+  .modal-body {
+
+    h2{
+      font-weight:400;
+      font-size:28px;
+    }
+
+    h2:first-of-type{
+      margin-top:5px;
+    }
+    p{
+      color: $color-navy-blue;
+      line-height: 20px;
+      font-size:16px;
+    }
+
+    .bootstrap-select{
+      &:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: 100%;
+      }
+      & > .btn{
+        border-color: $color-navy-blue;
+      }
+      &.btn-group .btn .filter-option{
+        color: $color-navy-blue;
+        font-weight: 400;
+        font-size:18px;
+      }
+      .text-muted{
+        color:$color-navy-blue;
+        font-weight:300;
+        padding-left:4px;
+      }
+      .dropdown-menu li.active a small{
+        color:$color-grey-light;
+      }
+    }
+
+    .form-control{
+      border-color: $color-navy-blue;
+    }
+
+    .checkbox-inline{
+      line-height: normal;
+      font-size:16px;
+    }
+
+    .form-group:last-child{
+      margin-bottom:0;
+    }
+  }
+}
+
+#onboarding-overlay {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-height:400px;
+  height: 100%;
+  width: 100%;
+}
+
+#call-congress-modal .modal-dialog{
+  padding-bottom: 10px;
+  @include tablet-plus{
+    width: 800px;
+  }
+}
+
+.modal-body {
+  padding:0;
+  .md-modal-wrap{
+    padding:20px;
+  }
+  h3, h2{
+    font-weight: 400;
+  }
+  dl, ul, li{
+    margin-left:20px;
+  }
+  dt{
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .close{
+    margin-top:-14px;
+    margin-right:-8px;
+  }
+}
